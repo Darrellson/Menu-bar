@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(7, 7, 7);
+}
+.manu-container {
+    position: relative;
+    width: 400px;
+    display: flex;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+}
+.menu-toggle {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    font-size: 50px;
+    display: flex;
+    transition: transform 1.5s;
+    color: white;
+    background-color: #131415;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    border: 2px sloid #232427;
+    box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 50%), 
+    -2px -2px -2px 1px rgb(108 108 108 / 20%), 
+    inset 2px 2px 2px 2px rgb(0 0 0 / 50%),
+    inset -2px -2px -2px 1px rgb(108 108 108 / 20%);
+    z-index: 1000;
+}
+.manu-container li a {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    color: white;
+    border: 2px solid #232427;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.8s;
+    font-size: 30px;
+    text-decoration: none !important;
+    box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 50%), 
+    -2px -2px -2px 1px rgb(108 108 108 / 20%), 
+    inset 2px 2px 2px 2px rgb(0 0 0 / 50%),
+    inset -2px -2px -2px 1px rgb(108 108 108 / 20%);
+}
+.manu-container li {
+    list-style: none;
+    position: absolute;
+    transform-origin: 200px;
+    transition: 0.8s;
+    left: 0;
+    transition-delay: calc(0.1s * var(--i));
+    transform: rotate(0deg) translateX(170px);
+}
+.manu-container.active .menu-tooggle {
+    transform: rotate(315deg);
+}
+.manu-container.active li {
+    transform: rotate(calc(365deg / 8 *var(--i)));
+}
+.manu-container.active li:nth-of-type(5) a i {
+    transform: rotate(178deg);
+}
+.manu-container.active li:nth-of-type(6) a i {
+    transform: rotate(130deg);
+}
+.manu-container.active li:nth-of-type(7) a i {
+    transform: rotate(85deg);
+}
+.manu-container.active li:nth-of-type(3) a i {
+    transform: rotate(-90deg);
+}
